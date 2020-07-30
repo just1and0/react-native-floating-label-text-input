@@ -29,12 +29,14 @@ class FloatingLabel extends Component {
   componentWillReceiveProps(newProps) {
     Animated.timing(this.state.paddingAnim, {
       toValue: newProps.visible ? 5 : 9,
-      duration: 230
+      duration: 230,
+       useAnimatedDriver: true,
     }).start();
 
     return Animated.timing(this.state.opacityAnim, {
       toValue: newProps.visible ? 1 : 0,
-      duration: 230
+      duration: 230,
+       useAnimatedDriver: true,
     }).start();
   }
 
@@ -58,7 +60,8 @@ class TextFieldHolder extends Component {
   componentWillReceiveProps(newProps) {
     return Animated.timing(this.state.marginAnim, {
       toValue: newProps.withValue ? 10 : 0,
-      duration: 230
+      duration: 230,
+       useAnimatedDriver: true
     }).start();
   }
 
